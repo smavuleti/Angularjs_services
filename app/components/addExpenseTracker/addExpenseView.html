@@ -1,0 +1,46 @@
+
+
+<div class="container-fluid">
+   <div class="row row-content" ng-controller ="addExpenseCtrl as addECtrl">
+        <div id="addExpense" >
+    <form class="form-horizontal" ng-submit="saveExpense()">
+        <div class="col-xs-12 col-sm-2">
+    <div class="form-group">
+    <!--  <div class="dropdown mydropdown">
+                <button class ="btn dropdown-toggle" type="button" data-toggle="dropdown"> Category {{selectedItem}}
+                 <span class="caret" > </span> </button>
+                        <ul class="dropdown-menu">
+                           
+                            <li ng-repeat="a in categories"><a ng-click="selectedCategory(a)"> {{a}}</a>  </li>
+                       </ul>
+             </div>-->
+        <div class= "mydropdown">
+        <select ng-model="selectedItem" ng-options="a for a in categories"></select>
+        </div>
+        
+    </div>
+    </div>
+        <div class="col-xs-12 col-sm-2">
+            
+           <div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control" placeholder="MM/DD/YYYY" ng-model="form.date">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+            </div>
+</div>
+        <div class="col-xs-12 col-sm-2">
+      <div class="input-group" >
+      
+       <input type="text" class="form-control" ng-model="form.amount" placeholder="Amount"> <span class="input-group-addon">$</span>
+      </div>
+        </div>
+      <div class="col-xs-12 col-sm-2">
+          <input type ="text" class="form-control" ng-model="form.storeName" placeholder="Store Name"> </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+                      <button type="button" class="btn btn-default">Cancel</button>
+  </form>
+                
+    </div>
+    </div>
+    </div>
