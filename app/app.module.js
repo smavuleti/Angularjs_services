@@ -1,8 +1,11 @@
     var app= angular.module("myApp",[
-        'myExpenseTrackerAppRouter',
+                                                    'myExpenseTrackerAppRouter',
+                                                    'ngMessages',
                                                     'myExpenseTrackerAppReportsCtrl',
                                                     'myExpenseTrackerAppNavbarDirective',
                                                     'myExpenseTrackerAppNavbarService',
                                                     'myExpenseTrackerAppAddExpenseCtrl',
-                                                    'myExpenseTrackerAddExpenseService'
+                                                    'myExpenseTrackerAddExpenseService',
+                                                    'myExpenseTrackerAppAlertCtrl',
+                                                    'myExpenseTrackerAppAlertService'
                                                 ]);

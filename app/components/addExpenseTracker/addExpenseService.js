@@ -8,5 +8,9 @@ var data =[];
     service.getData= function(){
         return data;
     }
+    
+    service.removeData = function(){
+        
+    }
     return service;
 });

@@ -5,7 +5,7 @@ angular.module('myExpenseTrackerAppNavbarService', [])
 		getNavbarHeadings: function(){
 			var headings = [
 			{
-				title: 'Reports'
+				title: 'Expense Reports'
 			},{
 				title: 'Add Expense'
 			}

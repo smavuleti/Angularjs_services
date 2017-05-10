@@ -1,4 +1,4 @@
-angular.module('myExpenseTrackerAppAddExpenseCtrl', []).controller('addExpenseCtrl',function($scope, addExpenseFactory){
+angular.module('myExpenseTrackerAppAddExpenseCtrl', []).controller('addExpenseCtrl',function($scope, addExpenseFactory, alertFactory){
      $scope.categories=['Fruits','Snacks','Vegetables'];
          $scope.selectedItem;
             $scope.selectedCategory = function(item){
@@ -29,6 +29,9 @@ angular.module('myExpenseTrackerAppAddExpenseCtrl', []).controller('addExpenseCt
         
             addExpenseFactory.insertData(dataSaved);
             console.log(addExpenseFactory.getData());
+            $scope.getAlerts = alertFactory.addAlert('Expense Added successfully','alert-success');
+            console.log($scope.getAlerts);
+            $scope.alerts = alertFactory.alerts;
             
         }  
 })

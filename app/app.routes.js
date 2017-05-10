@@ -2,12 +2,12 @@ var app = angular.module('myExpenseTrackerAppRouter', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
     
-    $urlRouterProvider.otherwise('/Reports');
+    $urlRouterProvider.otherwise('/Expense Reports');
     $stateProvider
     
     //Expense tracker main page- displaying expense reports
-    .state('Reports', {
-        url: '/Reports',
+    .state('Expense Reports', {
+        url: '/Expense Reports',
         templateUrl:'app/components/main/expenseReports.html'
     })
     

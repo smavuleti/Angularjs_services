@@ -3,27 +3,27 @@
 <div class="container-fluid">
    <div class="row row-content" ng-controller ="addExpenseCtrl as addECtrl">
         <div id="addExpense" >
-    <form class="form-horizontal" ng-submit="saveExpense()">
+    <form name="myForm" class="form-horizontal" ng-submit="saveExpense()">
         <div class="col-xs-12 col-sm-2">
     <div class="form-group">
-    <!--  <div class="dropdown mydropdown">
-                <button class ="btn dropdown-toggle" type="button" data-toggle="dropdown"> Category {{selectedItem}}
+      <div class="dropdown mydropdown">
+                <button class ="btn dropdown-toggle addExpenseDropdownBtns" type="button" data-toggle="dropdown"> Category {{selectedItem}}
                  <span class="caret" > </span> </button>
                         <ul class="dropdown-menu">
                            
                             <li ng-repeat="a in categories"><a ng-click="selectedCategory(a)"> {{a}}</a>  </li>
                        </ul>
-             </div>-->
-        <div class= "mydropdown">
-        <select ng-model="selectedItem" ng-options="a for a in categories"></select>
-        </div>
+             </div>
+       <!-- <div class= "mydropdown">
+        <select ng-model="selectedItem" name=" category" ng-options="a for a in categories"></select>
+        </div>-->
         
     </div>
     </div>
         <div class="col-xs-12 col-sm-2">
             
            <div class="input-group date" data-provide="datepicker">
-    <input type="text" class="form-control" placeholder="MM/DD/YYYY" ng-model="form.date">
+    <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="thedate" ng-model="form.date" required>
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -32,13 +32,39 @@
         <div class="col-xs-12 col-sm-2">
       <div class="input-group" >
       
-       <input type="text" class="form-control" ng-model="form.amount" placeholder="Amount"> <span class="input-group-addon">$</span>
+       <input type="text" class="form-control" ng-model="form.amount" name="amount" placeholder="Amount" required> <span class="input-group-addon">$</span>
       </div>
         </div>
       <div class="col-xs-12 col-sm-2">
-          <input type ="text" class="form-control" ng-model="form.storeName" placeholder="Store Name"> </div>
+          <input type ="text" class="form-control" ng-model="form.storeName" placeholder="Store Name" required name="storename"> </div>
     <button type="submit" class="btn btn-default">Submit</button>
                       <button type="button" class="btn btn-default">Cancel</button>
+               <div ng-if="myForm.thecategory.$error.required" role="alert">
+         <div ng-message ="required"> Please select Category </div>
+        </div>
+        
+        <div ng-if="myForm.thedate.$error.required" role="alert">
+            <div ng-message ="required"> Please select Date </div>
+        </div>
+        
+        
+        <div ng-if="myForm.amount.$error.required" role="alert">
+            <div ng-message ="required"> Please enter Amount </div>
+        </div>
+        
+        
+        <div ng-if="myForm.storename.$error.required" role="alert">
+            <div ng-message ="required"> Please enter Store Name </div>
+        </div>
+        
+        
+        <div id="myAlerts">
+         <div ng-controller ="addExpenseCtrl">
+        <div class="{{getAlerts.type}}">{{getAlerts.message}}</div>
+    </div>
+        </div>
+        
+        
   </form>
                 
     </div>
