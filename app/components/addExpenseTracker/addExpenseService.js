@@ -9,8 +9,9 @@ var data =[];
         return data;
     }
     
-    service.removeData = function(){
-        
-    }
+   /* service.removeData = function(item){
+        var index = data.indexOf(item);
+        data.splice(index,1);
+    } */
     return service;
 });
