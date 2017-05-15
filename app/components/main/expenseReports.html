@@ -6,7 +6,7 @@
            <table class="table table-striped">
                 <thead>
                 <tr>
-                  
+                  <th> # </th>
                   <th>Category</th>
                   <th>Date</th>
                   <th>Amount</th>
@@ -17,12 +17,12 @@
               </thead>
                <tbody>
                 <tr ng-repeat="expense in expCtrl.expenses">
-                  
+                  <td> {{$index}}</td>
                   <td>{{expense.categoryName}}</td>
                   <td>{{expense.date}}</td>
                   <td>{{expense.amount | currency}}</td>
                   <td>{{expense.storeName}}</td>
-                    <td> <a class="btn" data-ng-click="remove($index)">Remove</a></td>
+                    <td> <a class="btn" ng-click="remove($index,expense)">Remove</a></td>
                 </tr>
                </tbody>
                

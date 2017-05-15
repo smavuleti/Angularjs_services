@@ -5,11 +5,16 @@ angular.module('myExpenseTrackerAppReportsCtrl', []).controller('expenseReportsC
     
     //to remove the expense row
    // addExpenseFactory.removeData(item);
-    $scope.remove = function(item){
-        //alert(item);
-        alert($scope.expenses[item]);
-        //var index = $scope.expenses[item];
-       // $scope.expenses.splice(index,1);
+    $scope.remove = function($index, expense){
+        console.log(expense);
+        alert("Expense is removed");
+        console.log(addExpenseFactory.getData());
+        
+        var newData = addExpenseFactory.getData();
+        newData.splice($index,1);
+        addExpenseFactory.setData(newData);
+       // this.expenses.pop();
+       // $scope.$emit('')
     }
 })
 

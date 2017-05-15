@@ -9,6 +9,9 @@ var data =[];
         return data;
     }
     
+    service.setData = function(updateData){
+        data = updateData;
+    }
    /* service.removeData = function(item){
         var index = data.indexOf(item);
         data.splice(index,1);

@@ -13,9 +13,6 @@ angular.module('myExpenseTrackerAppAddExpenseCtrl', []).controller('addExpenseCt
     
         $scope.saveExpense = function() {
             
-            
-            
-            
             //category:
             $scope.form.selectedItem = $scope.selectedItem;
             
